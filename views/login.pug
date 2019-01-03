@@ -1,0 +1,18 @@
+extends layout
+
+block content
+    .container
+        h2 Login
+        p Please Login Below
+        .row
+            form.col.s12(method='post',action='/user/login')
+                .row
+                    .input-field.col.s6
+                        input#username.validate(type='text',name='username')
+                        label(for='username') Username
+                .row
+                    .input-field.col.s6
+                        input#password.validate(type='password',name='password')
+                        label(for='password') Password
+                .row
+                    input.btn(type='submit',name='submit',value='Login')

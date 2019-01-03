@@ -1,97 +1,38 @@
 doctype html
 html(lang='pt-br')
-  head
-    meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
-    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1.0')
-    title Starter Template - Materialize
-    // CSS
-    link(href='https://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
-    link(href='css/materialize.min.css', type='text/css', rel='stylesheet', media='screen,projection')
-    link(href='css/style.css', type='text/css', rel='stylesheet', media='screen,projection')
-  body
-    nav.light-blue.lighten-1(role='navigation')
-      .nav-wrapper.container
-        a#logo-container.brand-logo(href='#') Logo
-        ul.right.hide-on-med-and-down
-          li
-            a(href='#') Navbar Link
-        ul#nav-mobile.sidenav
-          li
-            a(href='#') Navbar Link
-        a.sidenav-trigger(href='#', data-target='nav-mobile')
-          i.material-icons menu
-    #index-banner.section.no-pad-bot
-      .container
-        br
-        br
-        h1.header.center.orange-text Starter Template
-        .row.center
-          h5.header.col.s12.light A modern responsive front-end framework based on Material Design
-        .row.center
-          a#download-button.btn-large.waves-effect.waves-light.orange(href='http://materializecss.com/getting-started.html') Get Started
-        br
-        br
-    .container
-      .section
-        // Icon Section
-        .row
-          .col.s12.m4
-            .icon-block
-              h2.center.light-blue-text
-                i.material-icons flash_on
-              h5.center Speeds up development
-              p.light
-                | We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.
-          .col.s12.m4
-            .icon-block
-              h2.center.light-blue-text
-                i.material-icons group
-              h5.center User Experience Focused
-              p.light
-                | By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.
-          .col.s12.m4
-            .icon-block
-              h2.center.light-blue-text
-                i.material-icons settings
-              h5.center Easy to work with
-              p.light
-                | We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.
-      br
-      br
-    footer.page-footer.orange
-      .container
-        .row
-          .col.l6.s12
-            h5.white-text Company Bio
-            p.grey-text.text-lighten-4
-              | We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.
-          .col.l3.s12
-            h5.white-text Settings
-            ul
-              li
-                a.white-text(href='#!') Link 1
-              li
-                a.white-text(href='#!') Link 2
-              li
-                a.white-text(href='#!') Link 3
-              li
-                a.white-text(href='#!') Link 4
-          .col.l3.s12
-            h5.white-text Connect
-            ul
-              li
-                a.white-text(href='#!') Link 1
-              li
-                a.white-text(href='#!') Link 2
-              li
-                a.white-text(href='#!') Link 3
-              li
-                a.white-text(href='#!') Link 4
-      .footer-copyright
+    head
+        meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1.0')
+        title User Login System
+        // CSS
+        link(href='https://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
+        link(href='/css/materialize.min.css', type='text/css', rel='stylesheet', media='screen,projection')
+        link(href='/css/style.css', type='text/css', rel='stylesheet', media='screen,projection')
+    body
         .container
-          | Made by
-          a.orange-text.text-lighten-3(href='http://materializecss.com') Materialize
-    // Scripts
-    script(src='https://code.jquery.com/jquery-2.1.1.min.js')
-    script(src='js/materialize.js')
-    script(src='js/init.js')
+            nav.nav-wrapper.blue-grey
+             .row
+              .col.s3
+                a.brand-logo(href='#') System Login
+                a.button-collapse(href='#', data-activates='menu-mobile')
+                    i.material-icons menu
+              ul.left.hide-on-med-and-down
+                    li(class=(title == 'Members' ? 'active':''))
+                        a(href='/') Members
+                    li(class=(title == 'Register' ? 'active':''))
+                        a(href='/user/register') Register
+                    li(class=(title == 'Login' ? 'active':''))
+                        a(href='/user/login') Login
+              ul#menu-mobile.side-nav(style='transform: translateX(-100%);')
+                    li
+                        a(href='/') Members
+                    li
+                        a(href='/register') Register
+                    li
+                        a(href='/login') Login
+
+        block content
+        // Scripts
+        script(src='/js/jquery-2.1.1.min.js')
+        script(src='/js/materialize.min.js')
+        script(src='/js/custom.js')

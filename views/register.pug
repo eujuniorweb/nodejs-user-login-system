@@ -1,0 +1,35 @@
+extends layout
+
+block content
+    .container
+        h2 Register
+        p Please Register using the form below
+        .row
+            form.col.s12(method='post',action='/user/register', enctype='multipart/form-data')
+                .row
+                    .input-field.col.s4
+                        input#first_name.validate(placeholder='Enter Name', type='text',name='name')
+                        label(for='first_name') Name
+                    .input-field.col.s4
+                        input#email.validate(type='email',name='email')
+                        label(for='email') Email
+                    .input-field.col.s4
+                        input#username.validate(type='text',name='username')
+                        label(for='username') Username
+                .row
+                    .input-field.col.s12
+                        input#password.validate(type='password',name='password')
+                        label(for='password') Password
+                .row
+                    .input-field.col.s12
+                        input#password2.validate(type='password',name='password2')
+                        label(for='password2') Confirm Password
+                .row
+                    .file-field.input-field
+                        .btn
+                            span File Image
+                            input(type='file',name='fileimage')
+                        .file-path-wrapper
+                            input.file-path.validate(type='text')
+                .row
+                    input.btn(type='submit',name='submit',value='Register')
