@@ -4,6 +4,9 @@ block content
     .container
         h2 Register
         p Please Register using the form below
+        if errors
+         each error, i in errors
+          div.card-panel.lighten-4.text-darken-4.red.red-text.alert.close #{error.msg}
         .row
             form.col.s12(method='post',action='/user/register', enctype='multipart/form-data')
                 .row
@@ -15,7 +18,7 @@ block content
                         label(for='email') Email
                     .input-field.col.s4
                         input#username.validate(type='text',name='username')
-                        label(for='username') Username
+                        label(for='username') User
                 .row
                     .input-field.col.s12
                         input#password.validate(type='password',name='password')
@@ -28,7 +31,7 @@ block content
                     .file-field.input-field
                         .btn
                             span File Image
-                            input(type='file',name='fileimage')
+                            input(type='file',name='profileimage')
                         .file-path-wrapper
                             input.file-path.validate(type='text')
                 .row

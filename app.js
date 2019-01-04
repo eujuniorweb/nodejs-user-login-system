@@ -44,7 +44,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 //Validator
-
+app.use(validator());
 // Flash Messages
 app.use(flash());
 app.use(function (req, res, next) {
