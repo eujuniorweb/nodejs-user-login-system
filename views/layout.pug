@@ -30,7 +30,8 @@ html(lang='pt-br')
                         a(href='/register') Register
                     li
                         a(href='/login') Login
-
+        .container
+         != messages()
         block content
         // Scripts
         script(src='/js/jquery-2.1.1.min.js')
